@@ -1,0 +1,75 @@
+.loader-parent {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5 ease-in;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.loader-parent::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  background: black;
+  opacity: 65%;
+}
+
+.loader-div {
+  height: 250px;
+  width: 250px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  color: var(--white);
+}
+
+.spinner {
+  position: absolute;
+  top: 2.5%;
+  left: 2.5%;
+  width: 95%;
+  height: 95%;
+  border-radius: 50%;
+  border: 15px solid transparent;
+  mix-blend-mode: overlay;
+  animation: rotate var(--duration) var(--delay) infinite;
+}
+
+.spinner-one {
+  border-left: 15px solid hsl(166, 100%, 37%);
+  --duration: 2s;
+  --delay: 0.2s;
+}
+
+.spinner-two {
+  border-right: 15px solid hsla(252, 100%, 67%, 1);
+  --duration: 2.1s;
+  --delay: 0.8s;
+}
+
+.spinner-three {
+  border-bottom: 15px solid hsl(0, 100%, 67%);
+  --duration: 1.8s;
+  --delay: 0.1s;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.hide {
+  transition: 0.5s ease-in;
+  transform: translateY(100vh);
+  border: 5px solid red;
+}
